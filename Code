@@ -63,7 +63,7 @@ boxplot(brackishwater$Length.cm., freshwater$Length.cm.,
         main = "Group")
 
 
-#Brackishwater and freshwater by Body Weight
+# Brackishwater and freshwater by Body Weight
 boxplot(brackishwater$Body_weight.g., freshwater$Body_weight.g.,
         names = c("brackishwater", "freshwater"),
         col = c("blue", "red"),
@@ -71,7 +71,7 @@ boxplot(brackishwater$Body_weight.g., freshwater$Body_weight.g.,
         main = "Group")
 
 
-#subset the chromosome V from the ThreeSpined.vcf.gz file
+# subset the chromosome V from the ThreeSpined.vcf.gz file
 vcf<- readLines("ThreeSpined.vcf.gz")
 head(lines, 50)
 filtered_vcf <- vcf[grep("^##|^#CHROM|^chrV\t", vcf)]
@@ -93,7 +93,7 @@ chrom <- proc.chromR(chrom, verbose = TRUE,win.size=10)
 chromoqc(chrom)
 
 
-#quick check read depth distribution per individual
+# Quick check read depth distribution per individual
 dp <- extract.gt(chrV, element='DP', as.numeric=TRUE)
 boxplot(dp, las=3, col=c("#C0C0C0", "#808080"), ylab="Read Depth (DP)", cex=0.4, cex.axis=0.5,xlim=c(1,10))
 
@@ -168,7 +168,7 @@ barplot(table(mySum), col="blue", space=0, xlab="Allele counts",
         main="Distribution of ALT allele counts in total dataset")
 
 
-#Genetic Differentiation
+# Genetic Differentiation
 genlight.data.reduced <- genlight.data[,sample(1:127403, 50000)]
 
 genlight.data.reduced #checking basic information
@@ -182,7 +182,7 @@ FstValues <- stamppFst(genlight.data.reduced, nboots = 100, percent = 95)
 FstValues$Fsts
 
 
-#library(ape) # required package to visualize the tree using the "nj" function
+# library(ape) # required package to visualize the tree using the "nj" function
 Tree <- nj(as.dist(FstValues$Fsts)) # conversion of the Fst values to a tree object
 plot.phylo(Tree,type="unrooted",show.tip.label=TRUE,edge.width=1,rotate.tree=100)
 ??plot.phylo()
@@ -191,7 +191,7 @@ plot.phylo(Tree,type="unrooted",show.tip.label=TRUE,edge.width=1,rotate.tree=100
 genind.data <- vcfR2genind(chrV)
 
 
-#Specify the populations
+# Specify the populations
 pops <- as.factor(c(
   "L12", "L12", "L03", "L07", "L12", "L01",
   "L07", "L12", "L01", "L07", "L12", "L01",
