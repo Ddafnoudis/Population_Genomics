@@ -110,8 +110,6 @@ nLoc(genlight.data) # number of SNPs
 
 # Adding information about the population membership
 # and the ploidy of each sample.
-# Adding information about the population membership
-# and the ploidy of each sample.
 pops <- as.factor(c(
   "L12", "L12", "L03", "L07", "L12", "L01",
   "L07", "L12", "L01", "L07", "L12", "L01",
