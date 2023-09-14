@@ -1,7 +1,3 @@
-# Set the working directory
-setwd("C:/Users/dimit/Desktop/AppBio/7th_classes_Polulation_Genomics/PopGen_Assignment")
-
-
 # Library preparation
 library("vcfR")
 library("DEMEtics")
